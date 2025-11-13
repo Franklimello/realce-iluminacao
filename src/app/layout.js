@@ -84,11 +84,11 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo.jpeg", type: "image/jpeg" },
-      { url: "/logo.jpeg", type: "image/jpeg", sizes: "192x192" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/android.jpeg", type: "image/jpeg" },
     ],
-    shortcut: "/logo.jpeg",
-    apple: "/logo.jpeg",
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.jpeg", type: "image/jpeg" }],
   },
   verification: {
     google: "WKbHrteBd7ZVAata6JEWdk1U8D2AAF8Smo41RTP5XFU",
