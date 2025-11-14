@@ -50,7 +50,7 @@ export default function HomePageClient() {
 
   return (
     <div
-      className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-fixed px-6 py-6 font-sans text-zinc-100"
+      className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-cover bg-center bg-fixed px-4 py-4 font-sans text-zinc-100 sm:px-6 sm:py-6"
       style={{
         backgroundImage: 'url("/principal.jpeg")',
         fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
@@ -87,41 +87,41 @@ export default function HomePageClient() {
         <span className="hidden text-sm sm:inline">Interruptor</span>
       </button>
 
-      <main className="relative z-0 flex w-full items-center justify-center">
+      <main className="relative z-0 flex w-full items-center justify-center px-2 sm:px-0">
         <section
-          className={`max-w-xl rounded-3xl border border-white/10 bg-black/40 px-6 py-10 text-center shadow-[0_24px_40px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-transform duration-700 sm:px-10 ${
+          className={`w-full max-w-md rounded-3xl border border-white/10 bg-black/40 px-5 py-8 text-center shadow-[0_24px_40px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-transform duration-700 sm:max-w-xl sm:px-10 sm:py-10 ${
             lightsOn ? "scale-[1.02]" : "scale-100"
           }`}
         >
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-3">
             <Image
               src="/logo.jpeg"
               alt="Logo Realce Iluminação Cênica"
-              width={90}
-              height={90}
-              className="rounded-md shadow-[0_10px_20px_rgba(2,6,23,0.35)]"
+              width={80}
+              height={80}
+              className="rounded-md shadow-[0_10px_20px_rgba(2,6,23,0.35)] sm:h-[90px] sm:w-[90px]"
             />
             <h1
-              className="text-center text-5xl uppercase tracking-[0.18em] text-zinc-100 sm:text-[3.6rem]"
+              className="text-center text-4xl uppercase tracking-[0.14em] text-zinc-100 sm:text-[3.6rem] sm:tracking-[0.18em]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               <span className="text-[#7f1d1d]">Realce</span>{" "}
               <span className="text-[#facc15]">Iluminação Cênica</span>
             </h1>
           </div>
-          <p className="mb-10 text-base leading-relaxed text-zinc-200 sm:text-lg">
+          <p className="mb-8 text-sm leading-relaxed text-zinc-200 sm:mb-10 sm:text-lg">
             Transformamos ambientes com luz, criando experiências visuais únicas
             e memoráveis para cada evento.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
-              className="inline-flex min-w-[160px] items-center justify-center gap-2 rounded-full border border-white/30 bg-linear-to-r from-[#7f1d1d] to-[#4c0519] px-8 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(47,12,29,0.45)] sm:text-sm"
+              className="inline-flex min-w-[150px] items-center justify-center gap-2 rounded-full border border-white/30 bg-linear-to-r from-[#7f1d1d] to-[#4c0519] px-7 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(47,12,29,0.45)] sm:min-w-[160px] sm:px-8 sm:tracking-[0.18em] sm:text-sm"
               href="/fotos"
             >
               Fotos
             </Link>
             <Link
-              className="inline-flex min-w-[160px] items-center justify-center gap-2 rounded-full border border-white/30 bg-linear-to-r from-[#facc15] to-[#f59e0b] px-8 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(250,204,21,0.35)] sm:text-sm"
+              className="inline-flex min-w-[150px] items-center justify-center gap-2 rounded-full border border-white/30 bg-linear-to-r from-[#facc15] to-[#f59e0b] px-7 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(250,204,21,0.35)] sm:min-w-[160px] sm:px-8 sm:tracking-[0.18em] sm:text-sm"
               href="/locacao"
             >
               Locação
