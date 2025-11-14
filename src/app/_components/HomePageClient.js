@@ -3,15 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HomePageClient() {
-  const [lightsOn, setLightsOn] = useState(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-    const storedValue = window.localStorage.getItem("realceLightsOn");
-    return storedValue === "true";
-  });
+  const router = useRouter();
+  const [lightsOn, setLightsOn] = useState(false);
 
   const toggleLights = useCallback(() => {
     setLightsOn((previous) => {
@@ -21,6 +17,17 @@ export default function HomePageClient() {
       }
       return nextValue;
     });
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedValue = window.localStorage.getItem("realceLightsOn");
+      if (storedValue === "true") {
+        requestAnimationFrame(() => {
+          setLightsOn(true);
+        });
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -36,6 +43,10 @@ export default function HomePageClient() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [toggleLights]);
+
+  useEffect(() => {
+    router.prefetch("/fotos");
+  }, [router]);
 
   return (
     <div
